@@ -1,43 +1,43 @@
 +:
-����
+假设
 int a,b,c;
 c = a + b;
-�������»�ࣺ
-movl	-8(%rbp), %eax	#�ѻ���ַrbp��8�ĵ�ַ���ڴ浥Ԫ��ֵ�ƶ���eax�Ĵ�����������ͬ
+则有如下汇编：
+movl	-8(%rbp), %eax	#把基地址rbp减8的地址的内存单元的值移动到eax寄存器，下同
 movl	-4(%rbp), %edx
-addl	%edx, %eax  #��edx��eax�Ĵ�����ֵ��Ӵ浽eax
-movl	%eax, -12(%rbp)  #��eax�Ĵ�����ֵ�Ƶ�����ַrbp��12�ĵ�ַ���ڴ浥Ԫ
+addl	%edx, %eax  #把edx和eax寄存器的值相加存到eax
+movl	%eax, -12(%rbp)  #将eax寄存器的值移到基地址rbp减12的地址的内存单元
 
 
 -:
-����
+假设
 int a,b,c;
 c = a - b;
-�������»�ࣺ
+则有如下汇编：
 movl	-8(%rbp), %eax
 movl	-4(%rbp), %edx
-subl	%eax, %edx	#�ڶ���������ȥ��һ�����������������ŵ��ڶ���������Ӧ�ļĴ���
+subl	%eax, %edx	#第二操作数减去第一操作数，并将结果存放到第二操作数对应的寄存器
 movl	%edx, %eax
 movl	%eax, -12(%rbp)
 
 
 *:
-����
+假设
 int a,b,c;
 c = a * b;
-�������»�ࣺ
+则有如下汇编：
 movl	-4(%rbp), %eax
-imull	-8(%rbp), %eax
+imull	-8(%rbp), %eax #第二操作数乘以第一操作数，并将结果存放到第二操作数对应的寄存器
 movl	%eax, -12(%rbp)
 
 
 /:
-����
+假设
 int a,b,c;
 c = a / b;
-�������»�ࣺ
+则有如下汇编：
 movl	-4(%rbp), %eax
-cltd			#תΪ����
-idivl	-8(%rbp)
+cltd			#转为四字
+idivl	-8(%rbp) #将eax寄存器的值除以rbp-8地址的内存单元的值，并将结果存到eax
 movl	%eax, -12(%rbp)
 
