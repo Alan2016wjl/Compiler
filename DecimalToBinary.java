@@ -17,6 +17,6 @@ public class DecimalToBinary{
         } while (i != 0);//如果使用的是while，那么对于i=0的场景则会返回空字符串。
 
         return new String(buf, charPos, (32 - charPos));//用32-charPos是为了把正数补码的高位0去掉
-    }//
+    }
 
 }
