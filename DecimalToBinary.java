@@ -18,5 +18,5 @@ public class DecimalToBinary{
 
         return new String(buf, charPos, (32 - charPos));//用32-charPos是为了把正数补码的高位0去掉
     }
-
+//
 }
