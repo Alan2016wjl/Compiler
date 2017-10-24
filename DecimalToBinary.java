@@ -1,5 +1,3 @@
-package cn.francis.day01;
-
 import java.util.Scanner;
 
 public class DecimalToBinary{
