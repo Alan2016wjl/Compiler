@@ -49,10 +49,13 @@ int main()
 			}
 		}else if(ch == '\"'){
 			if(sentence){
-				printf("\n");
+				printf("\"\n");
 				sentence=false;
 			}
-			else sentence=true;
+			else {
+				printf("\"");
+				sentence=true;
+			}
 		}else{
 			printf("%c",ch);
 		}
