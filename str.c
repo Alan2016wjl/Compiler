@@ -1,7 +1,11 @@
 #include "stdio.h"
 #include "string.h"
 
+
+
 char *my_strstr(const char *haystack, const char * needle);
+
+
 
 int main()
 {
@@ -12,6 +16,8 @@ int main()
 
     return 0;
 }
+
+
 
 char *my_strstr(const char *haystack, const char * needle)
 {
@@ -32,7 +38,11 @@ char *my_strstr(const char *haystack, const char * needle)
             return (char *)h;
         ++h;
     }
-
     return NULL;
 }
+
+
+
+
+
 
